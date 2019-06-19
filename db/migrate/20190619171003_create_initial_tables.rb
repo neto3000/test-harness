@@ -52,21 +52,18 @@ class CreateInitialTables < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    def change
-      add_reference :projects, :user, foreign_key: true
-      add_reference :tests, :user, foreign_key: true
-      add_reference :suite_tests, :user, foreign_key: true
-      add_reference :test_runs, :user, foreign_key: true
-      add_reference :suite_test_runs, :user, foreign_key: true
+    add_reference :projects, :user, foreign_key: true
+    add_reference :tests, :user, foreign_key: true
+    add_reference :suite_tests, :user, foreign_key: true
+    add_reference :test_runs, :user, foreign_key: true
+    add_reference :suite_test_runs, :user, foreign_key: true
 
-      add_reference :tests, :project, foreign_key: true
-      add_reference :suite_tests, :project, foreign_key: true
-      add_reference :test_runs, :project, foreign_key: true
-      add_reference :suite_test_runs, :project, foreign_key: true
+    add_reference :tests, :project, foreign_key: true
+    add_reference :suite_tests, :project, foreign_key: true
+    add_reference :test_runs, :project, foreign_key: true
+    add_reference :suite_test_runs, :project, foreign_key: true
 
-      add_reference :tests, :suite_test, foreign_key: true
-      add_reference :test_runs, :suite_test, foreign_key: true
-
-    end
+    add_reference :tests, :suite_test, foreign_key: true
+    add_reference :test_runs, :suite_test, foreign_key: true
   end
 end
