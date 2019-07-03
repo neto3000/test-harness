@@ -4,4 +4,6 @@ class TestRun < ApplicationRecord
   belongs_to :suite_test_run
 
   has_many :test
+
+  enum status: [ :failed, :successed ]
 end
