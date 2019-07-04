@@ -5,6 +5,7 @@ class AddBaseTables < ActiveRecord::Migration[6.0]
       t.string :email, null: false
 
       t.timestamps
+      t.timestamp :deleted_at, { index: true }
     end
 
     create_table :projects do |t|
@@ -12,6 +13,7 @@ class AddBaseTables < ActiveRecord::Migration[6.0]
       t.references :user,index: true, foreign_key: true
 
       t.timestamps
+      t.timestamp :deleted_at, { index: true }
     end
 
     create_table :suit_tests do |t|
@@ -21,6 +23,7 @@ class AddBaseTables < ActiveRecord::Migration[6.0]
       t.references :project, index: true, foreign_key: true
 
       t.timestamps
+      t.timestamp :deleted_at, { index: true }
     end
 
     create_table :tests do |t|
@@ -32,6 +35,7 @@ class AddBaseTables < ActiveRecord::Migration[6.0]
       t.references :project, index: true, foreign_key: true
 
       t.timestamps
+      t.timestamp :deleted_at, { index: true }
     end
 
     create_table :suit_test_runs do |t|
@@ -45,6 +49,7 @@ class AddBaseTables < ActiveRecord::Migration[6.0]
       t.references :project, index: true, foreign_key: true
 
       t.timestamps
+      t.timestamp :deleted_at, { index: true }
     end
 
 
@@ -60,6 +65,7 @@ class AddBaseTables < ActiveRecord::Migration[6.0]
       t.references :suit_test_run, index: true, foreign_key: true
 
       t.timestamps
+      t.timestamp :deleted_at, { index: true }
     end
   end
 end

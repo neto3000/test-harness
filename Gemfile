@@ -28,6 +28,13 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# An interactor is a simple, single-purpose object. Read more: https://github.com/collectiveidea/interactor
+gem 'interactor', '~> 3.0'
+
+#A Rails plugin to add soft delete. Read more: https://github.com/ActsAsParanoid/acts_as_paranoid
+gem 'acts_as_paranoid', '~> 0.6.0'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
